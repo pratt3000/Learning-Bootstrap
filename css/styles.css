@@ -9,7 +9,7 @@
     min-height: 400px;
 }
 .footer{
-    background-color: rgb(120, 120, 192);
+    background-color: rgb(120, 187, 192);
     margin:0px auto;
     padding: 50px 0px 50px 0px;
 }
@@ -23,4 +23,10 @@
     font-size: 80%;
     margin: 0px;
     color: #0f0f0f;
+}
+body{
+    padding:50px 0px 0px 0px
+}
+.navbar-dark{
+    background-color: #512DA8;
 }

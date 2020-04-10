@@ -15,7 +15,22 @@
 </head>
 
 <body>
-
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class= "container">
+            <button class = "navbar-toggler" type="button" data-toggle = "collapse" data-target= "#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class = "navbar-brand" href="./index.html">restorante en con fusion</a>
+            <div class="collapse navbar-collapse" id = "navbar">
+                <ul class = "navbar-nav mr-auto">
+                    <li class = "nav-item"><a class= "nav-link" href= "./index.html">home</a></li>                
+                    <li class = "nav-item active"><a class= "nav-link" href= "#">About</a></li>                
+                    <li class = "nav-item"><a class= "nav-link" href= "#">menu</a></li>                
+                    <li class = "nav-item"><a class= "nav-link" href= "#">contact</a></li>                
+                </ul>
+            </div>
+        </div>
+    </nav>
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -31,6 +46,14 @@
 
     <div class = "container">
         <div class = "row">
+            <ol class="col-12 breadcrumb">
+                <li class = "breadcrumb-item">
+                    <a href="./index.html">home</a>
+                </li>
+                <li class= "breadcrumb-item">
+                    <a>about us </a>
+                </li>
+            </ol>
             <div class = "col-12">
                 <br>
                <h3>About Us</h3>
@@ -76,7 +99,7 @@
                 <div class="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="./index.html">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Contact</a></li>
