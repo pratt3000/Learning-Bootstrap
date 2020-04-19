@@ -13,7 +13,6 @@
      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
      <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
 
-
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -31,6 +30,7 @@
                     <li class = "nav-item"><a class= "nav-link" href= "#"><span class = "fa fa-list fa-lg"></span> menu</a></li>                
                     <li class = "nav-item"><a class= "nav-link" href= "./contactus.html"><span class = "fa fa-address-card fa-lg"></span> contact</a></li>                              
                 </ul>
+                <!--login button/option -->
                 <span class="navbar-text">
                     <a data-toggle="modal" data-target="#loginModal">
                         <span class="fa fa-sign-in"></span>Login 
@@ -43,13 +43,13 @@
     <div id="loginModal" class = "modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
+
                 <!-- MODAL header-->
                 <div class="modal-header">
-                    <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
-                        &times;
-                    </button>
+                    <h4 class="modal-title">Login </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
+
                 <!--MODAL body-->
                 <div class="modal-body">
                     <form>
@@ -97,16 +97,87 @@
                 </div>
                 <!-- reserve table button-->
                 <div class="col-12 col-sm align-self-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning"
-                    data-toggle="tooltip" data-html="true" title="or call us at <br><strong>7755999984</strong>"
-                    data-placement="bottom" href="#reservationDev">
+                    <a type= "button" role="button" class="btn btn-block nav-link btn-warning" 
+                    data-toggle="modal" data-target="#reservationFormModal">
                         Reserve Table
                     </a>
                 </div>
             </div>
         </div>
     </header>
-
+    <!-- Modal 2 for reservatoion button -->
+    <div id="reservationFormModal" class = "modal" role = "dialog">
+        <div class= "model-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class = "modal-header">
+                    <h4 class="modal-title">Reserve a table</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body align-items-center">
+                    <form>
+                        <div class="form-group row">
+                            <label for="firstname" class="col-md-2 col-form-label">Number of Guests</label>
+                            <div class="col-md-10">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                        <input type="radio" name="nbPeople" value="1" autocomplete="off" checked> 1
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input type="radio" name="nbPeople" value="2" autocomplete="off"> 2
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input type="radio" name="nbPeople" value="3" autocomplete="off"> 3
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input type="radio" name="nbPeople" value="4" autocomplete="off"> 4
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input type="radio" name="nbPeople" value="5" autocomplete="off"> 5
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input type="radio" name="nbPeople" value="6" autocomplete="off"> 6
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="section" class="col-md-2 col-form-label">Section</label>
+                            <div class="col-md-4">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" name="section" value="nonsmoking" autocomplete="off" checked> Non-Smoking
+                                    </label>
+                                    <label class="btn btn-danger">
+                                        <input type="radio" name="section" value="smoking" autocomplete="off"> Smoking
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lastname" class="col-md-2 col-form-label">Date and Time</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    <input class="form-control" type="date" name="dateBooking" value="" placeholder="Date">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                                    <input class="form-control" type="hour" name="hourBooking" value="" placeholder="Time">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-md-2 col-md-10">
+                                <button type="submit" class="btn btn-primary">Reserve</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--BODY-->
     <div class = "container">  
         <div class="row row-content">
@@ -206,67 +277,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- reserve a table -->
-        <div id="reservationDev" class="row row-content align-items-center" >
-            <div class="col-12 offset-0 col-md-8 offset-md-2">
-                <!--card-->
-                <div class="card">
-                    <h3 class="card-header bg-warning text-white">Reserve a table</h3>
-                    <!--card body-->
-                    <div class="card-body">
-                        <!-- form -->
-                        <form>
-                            <div class="form-group row">
-                                <label for="firstname" class="col-md-2 col-form-label">Number of Guests</label>
-                                <div class="col-md-10">
-                                    <div class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-secondary active">
-                                            <input type="radio" name="nbPeople" value="1" autocomplete="off" checked> 1
-                                        </label>
-                                        <label class="btn btn-secondary">
-                                            <input type="radio" name="nbPeople" value="2" autocomplete="off"> 2
-                                        </label>
-                                        <label class="btn btn-secondary">
-                                            <input type="radio" name="nbPeople" value="3" autocomplete="off"> 3
-                                        </label>
-                                        <label class="btn btn-secondary">
-                                            <input type="radio" name="nbPeople" value="4" autocomplete="off"> 4
-                                        </label>
-                                        <label class="btn btn-secondary">
-                                            <input type="radio" name="nbPeople" value="5" autocomplete="off"> 5
-                                        </label>
-                                        <label class="btn btn-secondary">
-                                            <input type="radio" name="nbPeople" value="6" autocomplete="off"> 6
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="lastname" class="col-md-2 col-form-label">Date and Time</label>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                                        <input class="form-control" type="date" name="dateBooking" value="" placeholder="Date">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                        <input class="form-control" type="hour" name="hourBooking" value="" placeholder="Time">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-md-2 col-md-10">
-                                    <button type="submit" class="btn btn-primary">Reserve</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 <!--FOOTER -->
@@ -315,11 +325,6 @@
  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
- <script>
-     $(document).ready(function(){
-         $('[data-toggle="tooltip"]').tooltip();
-     })
- </script>
 </body> 
 
 </html>
